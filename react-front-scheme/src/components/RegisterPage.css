@@ -1,0 +1,204 @@
+:root {
+  --primary: #4CAF50;
+  --primary-dark: #388E3C;
+  --primary-light: #C8E6C9;
+  --error: #F44336;
+  --text-dark: #212121;
+  --text-light: #757575;
+  --border: #E0E0E0;
+  --background: #F5F5F5;
+  --white: #FFFFFF;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.register-page {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--background);
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+}
+
+.register-card {
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 480px;
+  padding: 2.5rem;
+  transition: var(--transition);
+}
+
+.register-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.card-header h1 {
+  color: var(--primary-dark);
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.card-header p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.name-fields {
+  display: flex;
+  gap: 1rem;
+}
+
+.name-fields .form-group {
+  flex: 1;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  background-color: #FAFAFA;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-light);
+  background-color: var(--white);
+}
+
+.form-group input::placeholder {
+  color: #BDBDBD;
+}
+
+.form-group.error input {
+  border-color: var(--error);
+}
+
+.form-group.error input:focus {
+  box-shadow: 0 0 0 2px rgba(244, 67, 54, 0.2);
+}
+
+.error-text {
+  display: block;
+  margin-top: 0.3rem;
+  color: var(--error);
+  font-size: 0.8rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+}
+
+.submit-btn:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+.submit-btn:disabled {
+  background-color: #A5D6A7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-loader {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.login-redirect {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.login-redirect a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.login-redirect a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .register-card {
+    padding: 1.5rem;
+  }
+  
+  .name-fields {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+}

@@ -1,0 +1,372 @@
+/* Base Styles */
+.treasurer-dashboard {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  padding: 1rem;
+  color: #333;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #f5f7fa;
+}
+
+/* Header Styles */
+.dashboard-header {
+  margin-bottom: 2rem;
+  text-align: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #9ec995c5, #40b92f);
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 4px 12px rgba(74, 107, 255, 0.2);
+}
+
+.dashboard-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-subtitle {
+  opacity: 0.9;
+  font-size: 1rem;
+}
+
+/* Stats Grid - Different Colors for Each Card */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.stat-card {
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: white;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Total Farmers Card - Blue Theme */
+.stat-card:nth-child(1) {
+  background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+}
+
+/* Farmers Paid Card - Green Theme */
+.stat-card:nth-child(2) {
+  background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+
+/* With Balance Card - Orange/Red Theme */
+.stat-card:nth-child(3) {
+  background: linear-gradient(135deg, #f46b45, #eea849);
+}
+
+.stat-icon {
+  font-size: 2rem;
+  margin-right: 1.5rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.stat-content h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.stat-percentage {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Balance Section - Light Card Style */
+.balance-section {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border-top: 4px solid #4a6bff;
+}
+
+.section-header {
+  margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.25rem;
+}
+
+.section-subtitle {
+  color: #7f8c8d;
+  font-size: 0.95rem;
+}
+
+/* Table Styles */
+.balance-table-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.balance-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.balance-table thead th {
+  text-align: left;
+  padding: 1rem;
+  background-color: #4a6bff;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+}
+
+.balance-table thead th:first-child {
+  border-top-left-radius: 8px;
+}
+
+.balance-table thead th:last-child {
+  border-top-right-radius: 8px;
+}
+
+.balance-table tbody tr {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.balance-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.balance-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.balance-table td {
+  padding: 1rem;
+  vertical-align: middle;
+}
+
+.farmer-name {
+  display: flex;
+  align-items: center;
+}
+
+.farmer-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.75rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.balance-amount {
+  text-align: right;
+}
+
+.balance-badge {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  color: #d32f2f;
+  padding: 0.5rem 0.75rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-block;
+  min-width: 60px;
+  text-align: center;
+}
+
+.no-balances {
+  text-align: center;
+  padding: 2rem;
+  color: #7f8c8d;
+  font-size: 1.1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+/* Loading and Error States */
+.dashboard-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  text-align: center;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #4a6bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+.dashboard-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  text-align: center;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  background: linear-gradient(135deg, #fff5f5, #fff);
+  border-top: 4px solid #ff6b6b;
+}
+
+.error-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ff6b6b;
+}
+
+.retry-btn {
+  background: linear-gradient(135deg, #4a6bff, #6a11cb);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.retry-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(74, 107, 255, 0.3);
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+  .balance-table {
+    display: block;
+    width: 100%;
+  }
+  
+  .balance-table thead {
+    display: none;
+  }
+  
+  .balance-table tbody, 
+  .balance-table tr, 
+  .balance-table td {
+    display: block;
+    width: 100%;
+  }
+  
+  .balance-table tr {
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem;
+    background: white;
+  }
+  
+  .balance-table td {
+    padding: 0.75rem;
+    text-align: right;
+    position: relative;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .balance-table td:last-child {
+    border-bottom: none;
+  }
+  
+  .balance-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 600;
+    color: #4a6bff;
+  }
+  
+  .farmer-name {
+    justify-content: flex-end;
+  }
+  
+  .farmer-avatar {
+    position: absolute;
+    left: 0.75rem;
+  }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-card {
+    padding: 1rem;
+  }
+  
+  .stat-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+  
+  .stat-value {
+    font-size: 1.5rem;
+  }
+  
+  .dashboard-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .section-header h2 {
+    font-size: 1.25rem;
+  }
+  
+  .balance-badge {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8rem;
+  }
+}
