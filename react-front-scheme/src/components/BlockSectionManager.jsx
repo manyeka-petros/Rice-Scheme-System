@@ -30,9 +30,9 @@ export default function BlockSectionManager() {
   const fetchAllData = async () => {
     try {
       const [blocksRes, sectionsRes, locationsRes] = await Promise.all([
-        axios.get("http://localhost:8000/farmers/blocks/", axiosConfig),
-        axios.get("http://localhost:8000/farmers/sections/", axiosConfig),
-        axios.get("http://localhost:8000/farmers/locations/", axiosConfig),
+        axios.get("https://rice-scheme-system-1.onrender.com/farmers/blocks/", axiosConfig),
+        axios.get("https://rice-scheme-system-1.onrender.com/farmers/sections/", axiosConfig),
+        axios.get("https://rice-scheme-system-1.onrender.com/farmers/locations/", axiosConfig),
       ]);
       setBlocks(blocksRes.data);
       setSections(sectionsRes.data);
@@ -50,7 +50,7 @@ export default function BlockSectionManager() {
     }
     try {
       await axios.post(
-        "http://localhost:8000/farmers/locations/",
+        "https://rice-scheme-system-1.onrender.com/farmers/locations/",
         newLocation,
         axiosConfig
       );
@@ -74,7 +74,7 @@ export default function BlockSectionManager() {
     }
     try {
       await axios.post(
-        "http://localhost:8000/farmers/blocks/",
+        "https://rice-scheme-system-1.onrender.com/farmers/blocks/",
         newBlock,
         axiosConfig
       );
@@ -98,7 +98,7 @@ export default function BlockSectionManager() {
     }
     try {
       await axios.post(
-        "http://localhost:8000/farmers/sections/",
+        "https://rice-scheme-system-1.onrender.com/farmers/sections/",
         newSection,
         axiosConfig
       );

@@ -15,7 +15,7 @@ export default function UserManagement() {
     if (!authToken) return;
 
     axios
-      .get("http://localhost:8000/accounts/users/", {
+      .get("https://rice-scheme-system-1.onrender.com/accounts/users/", {
         headers: { Authorization: `Bearer ${authToken}` },
       })
       .then((res) => {
@@ -35,7 +35,7 @@ export default function UserManagement() {
       });
 
     axios
-      .get("http://localhost:8000/farmers/blocks/", {
+      .get("https://rice-scheme-system-1.onrender.com/farmers/blocks/", {
         headers: { Authorization: `Bearer ${authToken}` },
       })
       .then((res) => setBlocks(res.data));
@@ -44,7 +44,7 @@ export default function UserManagement() {
   const fetchSectionsForUser = async (userId, blockId) => {
     if (!blockId) return;
     try {
-      const res = await axios.get(`http://localhost:8000/accounts/filtered-sections/?block_id=${blockId}`, {
+      const res = await axios.get(`https://rice-scheme-system-1.onrender.com/accounts/filtered-sections/?block_id=${blockId}`, {
         headers: { Authorization: `Bearer ${authToken}` },
       });
       setUserSections((prev) => ({ ...prev, [userId]: res.data }));
@@ -77,7 +77,7 @@ export default function UserManagement() {
     const data = formStates[userId];
 
     axios
-      .patch(`http://localhost:8000/accounts/users/${userId}/`, data, {
+      .patch(`https://rice-scheme-system-1.onrender.com/accounts/users/${userId}/`, data, {
         headers: {
           Authorization: `Bearer ${authToken}`,
           "Content-Type": "application/json",

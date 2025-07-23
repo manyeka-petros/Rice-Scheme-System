@@ -50,10 +50,10 @@ export default function FarmerForm({ onSaved, editData, onCancel }) {
   const fetchInitialData = async () => {
     try {
       const [locRes, blockRes] = await Promise.all([
-        axios.get("http://localhost:8000/farmers/locations/", {
+        axios.get("https://rice-scheme-system-1.onrender.com/farmers/locations/", {
           headers: { Authorization: `Bearer ${authToken}` },
         }),
-        axios.get("http://localhost:8000/farmers/blocks/", {
+        axios.get("https://rice-scheme-system-1.onrender.com/farmers/blocks/", {
           headers: { Authorization: `Bearer ${authToken}` },
         }),
       ]);
@@ -72,7 +72,7 @@ export default function FarmerForm({ onSaved, editData, onCancel }) {
     }
     try {
       const res = await axios.get(
-        `http://localhost:8000/farmers/sections/?block_id=${blockId}`,
+        `https://rice-scheme-system-1.onrender.com/farmers/sections/?block_id=${blockId}`,
         {
           headers: { Authorization: `Bearer ${authToken}` },
         }
@@ -137,8 +137,8 @@ export default function FarmerForm({ onSaved, editData, onCancel }) {
       formData.set("section", form.section_id);
 
       const url = form.id
-        ? `http://localhost:8000/farmers/farmers/${form.id}/`
-        : `http://localhost:8000/farmers/farmers/`;
+        ? `https://rice-scheme-system-1.onrender.com/farmers/farmers/${form.id}/`
+        : `https://rice-scheme-system-1.onrender.com/farmers/farmers/`;
 
       const config = {
         headers: {

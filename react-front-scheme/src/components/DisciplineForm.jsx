@@ -26,7 +26,7 @@ export default function DisciplineForm({ onSaved }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        let farmersUrl = "http://localhost:8000/farmers/farmers/";
+        let farmersUrl = "https://rice-scheme-system-1.onrender.com/farmers/farmers/";
         if (user?.role === "block_chair" && user.block) {
           farmersUrl += `?block=${user.block}`;
         }
@@ -63,7 +63,7 @@ export default function DisciplineForm({ onSaved }) {
     }
 
     try {
-      await axios.post("http://localhost:8000/discipline/", formData, {
+      await axios.post("https://rice-scheme-system-1.onrender.com/discipline/", formData, {
         headers: {
           Authorization: `Bearer ${authToken}`,
           "Content-Type": "multipart/form-data",

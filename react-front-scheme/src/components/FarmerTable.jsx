@@ -24,7 +24,7 @@ export default function FarmerTable({ refreshFlag, onEdit, onDeleted }) {
 
   const fetchBlocks = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/farmers/blocks/", {
+      const res = await axios.get("https://rice-scheme-system-1.onrender.com/farmers/blocks/", {
         headers: { Authorization: `Bearer ${authToken}` },
       });
       setBlocks(res.data);
@@ -43,7 +43,7 @@ export default function FarmerTable({ refreshFlag, onEdit, onDeleted }) {
       });
 
       const res = await axios.get(
-        `http://localhost:8000/farmers/farmers/?${queryParams}`,
+        `https://rice-scheme-system-1.onrender.com/farmers/farmers/?${queryParams}`,
         {
           headers: { Authorization: `Bearer ${authToken}` },
         }
@@ -72,7 +72,7 @@ export default function FarmerTable({ refreshFlag, onEdit, onDeleted }) {
     if (!result.isConfirmed) return;
 
     try {
-      await axios.delete(`http://localhost:8000/farmers/farmers/${id}/`, {
+      await axios.delete(`https://rice-scheme-system-1.onrender.com/farmers/farmers/${id}/`, {
         headers: { Authorization: `Bearer ${authToken}` },
       });
 
@@ -197,7 +197,7 @@ export default function FarmerTable({ refreshFlag, onEdit, onDeleted }) {
                       <td>
                         {f.image && (
                           <img
-                            src={`http://localhost:8000${f.image}`}
+                            src={`https://rice-scheme-system-1.onrender.com${f.image}`}
                             alt="Farmer"
                             className="farmer-photo"
                           />

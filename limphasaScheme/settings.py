@@ -106,9 +106,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'limphasa',
-        'USER': 'postgres',
-        'PASSWORD': 'manyeka12',
-        'HOST': 'localhost',
+        'USER': 'limphasa_user',
+        'PASSWORD': 'ldacIPTZcz29AnWvMoXDjIFjwfC7nDD6',
+        'HOST': 'dpg-d2083indiees7396vnv0-a.oregon-postgres.render.com',
         'PORT': '5432',
     }
 }

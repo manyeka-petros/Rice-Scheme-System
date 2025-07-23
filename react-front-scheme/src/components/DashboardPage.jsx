@@ -71,7 +71,7 @@ export default function DashboardPage() {
     const fetchAll = async () => {
       try {
         setLoading(true);
-        const statsRes = await axios.get("http://localhost:8000/farmers/dashboard/stats/", {
+        const statsRes = await axios.get("https://rice-scheme-system-1.onrender.com/farmers/dashboard/stats/", {
           headers: { Authorization: `Bearer ${authToken}` },
           timeout: 10000
         });
@@ -94,10 +94,10 @@ export default function DashboardPage() {
       try {
         setLoading(true);
         const [usersRes, blocksRes] = await Promise.all([
-          axios.get("http://localhost:8000/accounts/users/", {
+          axios.get("https://rice-scheme-system-1.onrender.com/accounts/users/", {
             headers: { Authorization: `Bearer ${authToken}` },
           }),
-          axios.get("http://localhost:8000/farmers/blocks/", {
+          axios.get("https://rice-scheme-system-1.onrender.com/farmers/blocks/", {
             headers: { Authorization: `Bearer ${authToken}` },
           })
         ]);
@@ -155,7 +155,7 @@ export default function DashboardPage() {
   const fetchSectionsForUser = async (userId, blockId) => {
     if (!blockId) return;
     try {
-      const res = await axios.get(`http://localhost:8000/accounts/filtered-sections/?block_id=${blockId}`, {
+      const res = await axios.get(`https://rice-scheme-system-1.onrender.com/accounts/filtered-sections/?block_id=${blockId}`, {
         headers: { Authorization: `Bearer ${authToken}` },
       });
       setUserSections((prev) => ({ ...prev, [userId]: res.data }));
@@ -188,7 +188,7 @@ export default function DashboardPage() {
 
     try {
       const res = await axios.patch(
-        `http://localhost:8000/accounts/users/${userId}/`, 
+        `https://rice-scheme-system-1.onrender.com/accounts/users/${userId}/`, 
         data, 
         {
           headers: {

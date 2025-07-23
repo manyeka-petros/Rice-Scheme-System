@@ -52,7 +52,7 @@ export default function AttendanceForm({ onSaved }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        let farmersUrl = "http://localhost:8000/farmers/farmers/";
+        let farmersUrl = "https://rice-scheme-system-1.onrender.com/farmers/farmers/";
         if (user?.role === "block_chair" && user.block && user.section) {
           farmersUrl += `?block_id=${user.block}&section_id=${user.section}`;
         }
@@ -61,7 +61,7 @@ export default function AttendanceForm({ onSaved }) {
           axios.get(farmersUrl, {
             headers: { Authorization: `Bearer ${authToken}` },
           }),
-          axios.get("http://localhost:8000/farmers/blocks/", {
+          axios.get("https://rice-scheme-system-1.onrender.com/farmers/blocks/", {
             headers: { Authorization: `Bearer ${authToken}` },
           }),
         ]);
@@ -86,7 +86,7 @@ export default function AttendanceForm({ onSaved }) {
   useEffect(() => {
     if (user?.role !== "block_chair" && form.block) {
       axios
-        .get(`http://localhost:8000/farmers/sections/?block_id=${form.block}`, {
+        .get(`https://rice-scheme-system-1.onrender.com/farmers/sections/?block_id=${form.block}`, {
           headers: { Authorization: `Bearer ${authToken}` },
         })
         .then((res) => {
@@ -112,7 +112,7 @@ export default function AttendanceForm({ onSaved }) {
 
     try {
       const payload = { ...form };
-      await axios.post("http://localhost:8000/attendance/", payload, {
+      await axios.post("https://rice-scheme-system-1.onrender.com/attendance/", payload, {
         headers: {
           Authorization: `Bearer ${authToken}`,
         },

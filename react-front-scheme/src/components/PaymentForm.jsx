@@ -26,7 +26,7 @@ export default function PaymentForm({ onSaved }) {
   useEffect(() => {
     const fetchFarmers = async () => {
       try {
-        let url = "http://localhost:8000/farmers/farmers/";
+        let url = "https://rice-scheme-system-1.onrender.com/farmers/farmers/";
         if (user?.role === "block_chair") {
           url += `?block=${user.block}`;
         }
@@ -74,7 +74,7 @@ export default function PaymentForm({ onSaved }) {
     });
 
     try {
-      await axios.post("http://localhost:8000/payments/", formData, {
+      await axios.post("https://rice-scheme-system-1.onrender.com/payments/", formData, {
         headers: {
           Authorization: `Bearer ${authToken}`,
           "Content-Type": "multipart/form-data",

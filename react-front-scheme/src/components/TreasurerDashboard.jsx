@@ -15,10 +15,10 @@ export default function TreasurerDashboard() {
       try {
         setLoading(true);
         const [farmersRes, paymentsRes] = await Promise.all([
-          axios.get("http://localhost:8000/farmers/farmers/?limit=1000", {
+          axios.get("https://rice-scheme-system-1.onrender.com/farmers/farmers/?limit=1000", {
             headers: { Authorization: `Bearer ${authToken}` },
           }),
-          axios.get("http://localhost:8000/payments/", {
+          axios.get("https://rice-scheme-system-1.onrender.com/payments/", {
             headers: { Authorization: `Bearer ${authToken}` },
           }),
         ]);

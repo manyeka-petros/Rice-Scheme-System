@@ -17,8 +17,8 @@ export default function AttendanceTable({ refreshFlag }) {
       try {
         setLoading(true);
 
-        let attendanceUrl = "http://localhost:8000/attendance/";
-        let statsUrl = "http://localhost:8000/attendance/stats/";
+        let attendanceUrl = "https://rice-scheme-system-1.onrender.com/attendance/";
+        let statsUrl = "https://rice-scheme-system-1.onrender.com/attendance/stats/";
 
         if (user.role === "block_chair" && user.block) {
           statsUrl += `?block_id=${user.block}`;

@@ -44,7 +44,7 @@ export default function RegisterPage() {
     setLoading(true);
 
     try {
-      await axios.post("http://localhost:8000/accounts/register/", form);
+      await axios.post("https://rice-scheme-system-1.onrender.com/accounts/register/", form);
       Swal.fire({
         title: "Welcome!",
         text: "Your account has been created successfully",

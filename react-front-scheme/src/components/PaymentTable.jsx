@@ -17,8 +17,8 @@ export default function PaymentTable({ refreshFlag }) {
       try {
         setLoading(true);
         
-        let paymentsUrl = "http://localhost:8000/payments/";
-        let statsUrl = "http://localhost:8000/payments/stats/";
+        let paymentsUrl = "https://rice-scheme-system-1.onrender.com/payments/";
+        let statsUrl = "https://rice-scheme-system-1.onrender.com/payments/stats/";
 
         if (user.role === "block_chair") {
           paymentsUrl += `?block=${user.block}`;
@@ -60,7 +60,7 @@ export default function PaymentTable({ refreshFlag }) {
     if (!result.isConfirmed) return;
 
     try {
-      await axios.delete(`http://localhost:8000/payments/${id}/`, {
+      await axios.delete(`https://rice-scheme-system-1.onrender.com/payments/${id}/`, {
         headers: { Authorization: `Bearer ${authToken}` }
       });
       setPayments(p => p.filter(x => x.id !== id));

@@ -19,13 +19,13 @@ export default function BlockChairDashboard() {
         setLoading(true);
         const [farmersRes, disciplineRes] = await Promise.all([
           axios.get(
-            `http://localhost:8000/farmers/farmers/?block_id=${user.block}&section_id=${user.section}`,
+            `https://rice-scheme-system-1.onrender.com/farmers/farmers/?block_id=${user.block}&section_id=${user.section}`,
             {
               headers: { Authorization: `Bearer ${authToken}` },
             }
           ),
           axios.get(
-            `http://localhost:8000/discipline/cases/?block_id=${user.block}`,
+            `https://rice-scheme-system-1.onrender.com/discipline/cases/?block_id=${user.block}`,
             {
               headers: { Authorization: `Bearer ${authToken}` },
             }

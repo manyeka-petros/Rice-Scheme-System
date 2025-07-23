@@ -17,8 +17,8 @@ export default function DisciplineTable({ refreshFlag }) {
       try {
         setLoading(true);
 
-        let listUrl = "http://localhost:8000/discipline/";
-        let statsUrl = "http://localhost:8000/discipline/stats/";
+        let listUrl = "https://rice-scheme-system-1.onrender.com/discipline/";
+        let statsUrl = "https://rice-scheme-system-1.onrender.com/discipline/stats/";
 
         if (user.role === "block_chair" && user.block) {
           listUrl += `?block=${user.block}`;
@@ -60,7 +60,7 @@ export default function DisciplineTable({ refreshFlag }) {
     if (!result.isConfirmed) return;
 
     try {
-      await axios.delete(`http://localhost:8000/discipline/${id}/`, {
+      await axios.delete(`https://rice-scheme-system-1.onrender.com/discipline/${id}/`, {
         headers: { Authorization: `Bearer ${authToken}` },
       });
       setCases((prev) => prev.filter((c) => c.id !== id));
