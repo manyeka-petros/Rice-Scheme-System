@@ -6,7 +6,7 @@ import { useAuth } from "../components/AuthContext";
 import "./LoginPage.css";
 
 // Constants
-const API_BASE_URL = "https://rice-scheme-system-1.onrender.com";
+const API_BASE_URL = "https://rice-scheme-system.onrender.com";
 const LOGIN_ENDPOINT = `${API_BASE_URL}/accounts/login/`;
 
 const ACCESS_TOKEN_KEY = "access";

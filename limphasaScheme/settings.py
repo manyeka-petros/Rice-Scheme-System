@@ -1,22 +1,23 @@
 import os
 from pathlib import Path
 from datetime import timedelta
-from decouple import config  # to manage environment variables
 
 # Build paths inside the project
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # -----------------------------
 # SECURITY
 # -----------------------------
-SECRET_KEY = config('DJANGO_SECRET_KEY', default='your-default-secret-key')
-DEBUG = config('DEBUG', default=False, cast=bool)
+SECRET_KEY = 'your-default-secret-key'  # Replace with your real key
+DEBUG = False  # Set to True only for local development
 
-ALLOWED_HOSTS = config('DJANGO_ALLOWED_HOSTS', default='127.0.0.1,localhost').split(',')
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
+    'rice-scheme-system.onrender.com'
+]
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
-
 
 # -----------------------------
 # Installed Applications
@@ -43,7 +44,6 @@ INSTALLED_APPS = [
     'payments',
 ]
 
-
 # -----------------------------
 # Middleware
 # -----------------------------
@@ -58,7 +58,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-
 # -----------------------------
 # CORS Settings
 # -----------------------------
@@ -67,12 +66,10 @@ CORS_ALLOWED_ORIGINS = [
 ]
 CORS_ALLOW_CREDENTIALS = True
 
-
 # -----------------------------
 # URL Configuration
 # -----------------------------
 ROOT_URLCONF = 'limphasaScheme.urls'
-
 
 # -----------------------------
 # Templates
@@ -92,12 +89,10 @@ TEMPLATES = [
     },
 ]
 
-
 # -----------------------------
 # WSGI Application
 # -----------------------------
 WSGI_APPLICATION = 'limphasaScheme.wsgi.application'
-
 
 # -----------------------------
 # Database (PostgreSQL on Render)
@@ -112,7 +107,6 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
 
 # -----------------------------
 # Authentication & JWT
@@ -134,7 +128,6 @@ SIMPLE_JWT = {
     'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
 }
 
-
 # -----------------------------
 # Password Validators
 # -----------------------------
@@ -145,7 +138,6 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
-
 # -----------------------------
 # Internationalization
 # -----------------------------
@@ -153,7 +145,6 @@ LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'Africa/Blantyre'
 USE_I18N = True
 USE_TZ = True
-
 
 # -----------------------------
 # Static & Media Files
@@ -163,7 +154,6 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-
 
 # -----------------------------
 # Default Primary Key Field
