@@ -63,7 +63,7 @@ MIDDLEWARE = [
 # CORS Settings
 # -----------------------------
 CORS_ALLOWED_ORIGINS = [
-    "https://Limphasa-scheme.netlify.app",
+    "https://limphasa-scheme.netlify.app",
 ]
 CORS_ALLOW_CREDENTIALS = True
 
